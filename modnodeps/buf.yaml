@@ -1,0 +1,9 @@
+version: v1
+name: buf.build/emcfarlane/books
+lint:
+  use:
+  - DEFAULT
+  service_suffix: Service
+breaking:
+  use:
+  - FILE

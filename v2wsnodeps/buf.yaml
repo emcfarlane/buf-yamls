@@ -1,0 +1,10 @@
+version: v2
+# buf.yamls can refer to multiple modules.
+#
+# Module files are available to other modules in a similar manner as they are with workspaces
+# today.
+modules:
+  - path: books
+    name: buf.build/emcfarlane/books
+  - path: googleapis
+    name: buf.build/emcfarlane/googleapis

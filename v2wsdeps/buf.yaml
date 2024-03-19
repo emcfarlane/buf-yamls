@@ -1,0 +1,24 @@
+version: v2
+# buf.yamls can refer to multiple modules.
+#
+# Module files are available to other modules in a similar manner as they are with workspaces
+# today.
+modules:
+  - path: books
+    name: buf.build/emcfarlane/books
+  - path: googleapis
+    name: buf.build/emcfarlane/googleapis
+# Dependencies are shared between all modules.
+#
+# There's a single buf.lock for the buf.yaml, all modules represented by the buf.yaml
+# share the same dependency set.
+#
+# This all enables things like "workspace push".
+#
+# Note that for unused import detection, we will need to change the logic to make sure that
+# an import is not used by ANY module in the buf.yaml, not just the module being built.
+#
+# It is an error to have a module as a dep that is also a named module in the modules list.
+deps:
+  # Without federation, do we enforce that all deps are from the same hostname as the modules?
+  - buf.build/bufbuild/protovalidate

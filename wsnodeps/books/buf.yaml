@@ -1,0 +1,11 @@
+version: v1
+name: buf.build/emcfarlane/books
+deps:
+  - buf.build/emcfarlane/googleapis
+lint:
+  use:
+  - DEFAULT
+  service_suffix: Service
+breaking:
+  use:
+  - FILE
