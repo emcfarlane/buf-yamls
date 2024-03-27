@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package acme.v1.example;
 
+import "buf/validate/validate.proto";
 import "google/api/annotations.proto";
 import "google/api/http.proto";
 
@@ -18,7 +19,11 @@ service LibraryService {
 message Book {
   // Resource name of the book. It must have the format of "shelves/*/books/*".
   // For example: "shelves/shelf1/books/book2".
-  string name = 1;
+  string name = 1 [(buf.validate.field).cel = {
+    id: "book.name",
+    // `this.matches` match the string against a regex pattern, and evaluates to a bool.
+    expression: "this.matches('shelves/[a-zA-Z0-9]+/books/[a-zA-Z0-9]+')"
+  }];
   // The title of the book.
   string title = 5;
   // The name of the author.
