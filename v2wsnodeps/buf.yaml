@@ -5,6 +5,6 @@ version: v2
 # today.
 modules:
   - path: books
-    name: buf.build/emcfarlane/books
+    name: bufbuild.internal/myorg/books
   - path: googleapis
-    name: buf.build/emcfarlane/googleapis
+    name: bufbuild.internal/myorg/googleapis
