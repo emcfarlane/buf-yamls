@@ -5,6 +5,6 @@ version: v2
 # today.
 modules:
   - path: books
-    name: buf.build/emcfarlane/books
+    name: bufdemo.buf.dev/asdf/books
   - path: googleapis
-    name: buf.build/emcfarlane/googleapis
+    name: bufdemo.buf.dev/asdf/googleapis
