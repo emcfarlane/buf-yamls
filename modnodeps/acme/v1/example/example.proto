@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package acme.v1.example;
 
-option go_package = "acme.com/example";
-
 service LibraryService {
   // Gets a book.
   rpc GetBook(GetBookRequest) returns (Book) {
